@@ -10,7 +10,7 @@ source:
   sha256: 4b35da6fe3c4a652a3afb493d9f28edf64e46631b1dba7c7727e669e57afd019
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -33,4 +33,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - freundTech
     - pavelzw
