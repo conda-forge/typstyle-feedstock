@@ -18,6 +18,10 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
+  host:
+    - zlib
+  run:
+    - zlib
 
 test:
   commands:
