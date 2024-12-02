@@ -1,5 +1,5 @@
 {% set name = "typstyle" %}
-{% set version = "0.12.3" %}
+{% set version = "0.12.6" %}
 
 package:
   name: {{ name | lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Enter-tainer/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: cbe6ea2c110849c0bdb7b8f22683b964c3a1ecb11b912a0b7e2a9d1468726b24
+  sha256: b04a77a9f75dda3a9513088ee3cd28f0a093ff6a977f38186427bbb0e03ce66b
 
 build:
   number: 0
