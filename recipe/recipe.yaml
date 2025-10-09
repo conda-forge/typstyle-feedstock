@@ -31,7 +31,7 @@ about:
   license: Apache-2.0
   license_file:
     - LICENSE
-    - ./crates/typstyle/THIRDPARTY_LICENSES.yaml
+    - crates/typstyle/THIRDPARTY_LICENSES.yaml
   summary: Beautiful and reliable typst code formatter
 
 extra:
