@@ -22,7 +22,7 @@ build:
           - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path .
         else:
           - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
-      - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
+      - cargo-bundle-licenses --format yaml --output ../../THIRDPARTY.yml
 
 requirements:
   build:
@@ -50,7 +50,7 @@ about:
   license: Apache-2.0
   license_file:
     - LICENSE
-    - crates/typstyle/THIRDPARTY_LICENSES.yaml
+    - THIRDPARTY.yaml
   summary: Beautiful and reliable typst code formatter
 
 extra:
