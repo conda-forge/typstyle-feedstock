@@ -1,6 +1,6 @@
 context:
   name: typstyle
-  version: "0.14.4"
+  version: "0.15.0"
 
 package:
   name: ${{ name | lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/typstyle-rs/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: c20a07b9535dc34c0099f744f435ebfb53668b92f05e59b115fd264ecb9f7187
+  sha256: 23dd94b7a3f0e5ca40827d3998cc9669457a6aad80a6e70bbb886111734dab3f
 
 build:
   number: 0
