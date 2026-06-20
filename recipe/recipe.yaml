@@ -35,8 +35,6 @@ requirements:
 tests:
   - script:
       - typstyle --version
-  - script:
-      - typstyle --version
       - typstyle --help
   - package_contents:
       bin:
