@@ -1,17 +1,28 @@
 context:
-  name: typstyle
   version: "0.15.0"
 
 package:
-  name: ${{ name | lower }}
+  name: typstyle
   version: ${{ version }}
 
 source:
-  url: https://github.com/typstyle-rs/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  url: https://github.com/typstyle-rs/typstyle/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 23dd94b7a3f0e5ca40827d3998cc9669457a6aad80a6e70bbb886111734dab3f
 
 build:
   number: 0
+  script:
+    env:
+      CARGO_PROFILE_RELEASE_STRIP: symbols
+      CARGO_PROFILE_RELEASE_LTO: fat
+    content:
+      - cd crates/typstyle
+      - if: unix
+        then:
+          - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path .
+        else:
+          - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
+      - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
 
 requirements:
   build:
@@ -19,10 +30,18 @@ requirements:
     - ${{ stdlib('c') }}
     - ${{ compiler('rust') }}
     - cargo-bundle-licenses
+    - cargo-auditable
 
 tests:
   - script:
       - typstyle --version
+  - script:
+      - typstyle --version
+      - typstyle --help
+  - package_contents:
+      bin:
+        - typstyle
+      strict: true
 
 about:
   homepage: https://github.com/typstyle-rs/typstyle
